@@ -1,0 +1,16 @@
+
+{
+    "verbose": true,
+    "testRegex": "test\/.*\\.spec\\.jsx?$",
+    "testEnvironment": "jsdom",
+    "modulePaths": ["<rootDir>"],
+    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
+    "moduleFileExtensions": ["js", "jsx", "json", "es6"],
+    "transform": {
+        "^.+\\.jsx?$": "babel-jest"
+    },
+    "setupFiles": ["./test/jest.setup.js"],
+    "moduleNameMapper": {
+        "^.+\\.(css|scss)$": "identity-obj-proxy"
+    }
+}
