@@ -1,10 +1,12 @@
 const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const paths = require("../paths");
 
 module.exports = {
     bail: false,
     cache: true,
+    devtool: "cheap-module-inline-source-map",
     entry: {
         app: [
             "babel-polyfill",
@@ -14,8 +16,8 @@ module.exports = {
     },
     output: {
         path: paths.root("public"),
-        filename: "[name].[chunkhash:8].js",
-        chunkFilename: "[id].[chunkhash:8].js",
+        filename: "[name].[hash].js",
+        chunkFilename: "[id].[hash].js",
         publicPath: "/",
         pathinfo: true
     },
@@ -27,12 +29,15 @@ module.exports = {
                 use: [{
                     loader: "babel-loader",
                     options: {
-                        presets: [
-                            ["env", { "modules": false, "browsers": ["last 2 versions"] }],
-                            "stage-2",
-                            "react"
+                        "presets": [
+                            ["env", {
+                                "modules": false,
+                                "browsers": ["last 2 versions"]
+                            }],
+                            "react",
+                            "stage-2"
                         ],
-                        plugins: [
+                        "plugins": [
                             "transform-export-extensions",
                             "transform-decorators-legacy",
                             "react-hot-loader/babel"
@@ -60,6 +65,10 @@ module.exports = {
         ]
     },
     plugins: [
+        new HtmlWebpackPlugin({
+            filename: "index.html",
+            template: paths.root("src/index.html")
+        }),
         new ExtractTextPlugin({
             filename: "[name].[chunkhash:8].css",
             disable: true,
@@ -69,11 +78,30 @@ module.exports = {
             "process.env": {
                 NODE_ENV: JSON.stringify("development")
             }
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ],
     resolve: {
         modules: [ "node_modules", paths.root()],
         extensions: [".js", ".jsx"]
     },
-    performance: { hints: false }
+    performance: { hints: false },
+    devServer: {
+        host: "0.0.0.0",
+        port: 3000,
+        compress: true,
+        noInfo: false,
+        quiet: false,
+        inline: true,
+        hot: true,
+        historyApiFallback: true,
+        disableHostCheck: true,
+        stats: {
+            colors: true
+        },
+        watchOptions: {
+            aggregateTimeout: 300,
+            poll: true
+        }
+    }
 };
