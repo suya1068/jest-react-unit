@@ -1,7 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Sample /> renders three <Sample /> components 1`] = `
-<h1>
-  Hi, Jest!
+<h1
+  className="test"
+>
+  Hi, 
+  홍길동
+  !
 </h1>
 `;

@@ -1,7 +1,7 @@
 import React from "react";
 
-export default function Sample() {
+export default function Sample({ name }) {
     return (
-        <h1>Hi, Jest!</h1>
+        <h1 className="test">Hi, {name}!</h1>
     );
 }

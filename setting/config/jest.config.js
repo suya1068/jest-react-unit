@@ -3,7 +3,7 @@ const paths = require("../paths");
 module.exports = {
     "rootDir": paths.root(),
     "verbose": true,
-    "testRegex": "test\/.*\\.spec\\.jsx?$",
+    "testRegex": "src\/.*\\.spec\\.jsx?$",
     "testEnvironment": "jsdom",
     "modulePaths": ["<rootDir>"],
     "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],

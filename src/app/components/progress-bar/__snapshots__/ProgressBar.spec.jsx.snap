@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`# ProgressBar Component render <ProgresBar /> 1`] = `
+<div
+  className="u-progress-bar"
+>
+  ProgressBar
+</div>
+`;

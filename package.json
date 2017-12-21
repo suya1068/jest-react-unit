@@ -6,7 +6,8 @@
     "clean": "rimraf public",
     "start": "yarn run clean && webpack-dev-server --config webpack.config.js --env.dev",
     "build": "yarn run clean && webpack --config webpack.config.js --env.prod",
-    "test": "jest -c setting/config/jest.config.js"
+    "test": "jest --config setting/config/jest.config.js",
+    "unit": "yarn test --watch"
   },
   "license": "MIT",
   "devDependencies": {
@@ -38,6 +39,7 @@
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-hot-loader": "^3.0.0"
+    "react-hot-loader": "^3.0.0",
+    "react-router-dom": "^4.2.2"
   }
 }
