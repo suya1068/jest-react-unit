@@ -58,7 +58,7 @@ module.exports = {
                 use: [
                     { loader: "style-loader" },
                     { loader: "css-loader", options: { sourceMap: true, minimize: false } },
-                    { loader: "postcss-loader", options: { sourceMap: true, config: paths.root("setting/config/postcss.config.js") } },
+                    { loader: "postcss-loader", options: { sourceMap: true, config: { path: paths.root("setting/config/postcss.config.js") } } },
                     { loader: "sass-loader", options: { includePaths: [paths.root()], sourceMap: true } }
                 ]
             }

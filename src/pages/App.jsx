@@ -8,6 +8,8 @@ import {
     Redirect
 } from "react-router-dom";
 
+import ProgressBarPage from "./ProgressBarPage";
+
 class App extends Component {
     render() {
         return (
@@ -23,7 +25,7 @@ class App extends Component {
                     <Switch>
                         <Redirect exact from="/" to="/sample" />
                         <Route exact path="/sample" component={() => <h1>Sample</h1>} />
-                        <Route exact path="/progress-bar" component={() => <h1>ProgressBar</h1>} />
+                        <Route exact path="/progress-bar" component={ProgressBarPage} />
                     </Switch>
                 </div>
             </Router>
