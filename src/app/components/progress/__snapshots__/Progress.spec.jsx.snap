@@ -1,12 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`# ProgressBar Component render <ProgresBar /> 1`] = `
+exports[`# Progress Component render <Progres /> 1`] = `
 <div
   className="u-progress"
 >
   <div
     className="u-progress__bar"
-  />
+  >
+    <div
+      className="u-progress-status"
+    >
+      50%
+    </div>
+  </div>
   <div
     className="u-progress__label"
   >
