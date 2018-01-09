@@ -2,6 +2,16 @@ import "./Progress.scss";
 import React from "react";
 import PropTypes from "prop-types";
 
+// total
+// value
+// percent
+// text({ active, success })
+// duration
+// setProgress(value)
+// setPercent(percent)
+// setStatus(status)
+// reset()
+
 export default function Progress({ animation }) {
     return (
         <div className="u-progress">

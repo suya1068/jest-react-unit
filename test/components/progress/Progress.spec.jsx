@@ -1,5 +1,5 @@
 import React from "react";
-import Progress from "./Progress";
+import Progress from "src/components/progress/Progress";
 
 describe("# Progress Component", () => {
     it("render <Progres />", () => {
