@@ -15,7 +15,11 @@ unit test with jest
 - CheckboxGroup
 - Radio
 - RadioGroup
+- File
+- Switch
+- Progress
 - DropDown
 - Select
 - Pagination
-- Accordian
+- Accordion
+- Modal
