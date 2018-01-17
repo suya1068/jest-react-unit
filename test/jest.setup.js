@@ -1,5 +1,9 @@
-import renderer from "react-test-renderer";
+import "raf/polyfill";
+import Enzyme, { render, shallow, mount } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import { JSDOM } from "jsdom";
+
+Enzyme.configure({ adapter: new Adapter() });
 
 
 const documentHTML = "<!doctype html><html><body><div id='root'></div></body></html>";
@@ -20,6 +24,8 @@ global.navigator = {
     userAgent: "node.js"
 };
 
-global.renderer = renderer;
+global.render = render;
+global.shallow = shallow;
+global.mount = mount;
 
 copyProps(document.defaultView, global);

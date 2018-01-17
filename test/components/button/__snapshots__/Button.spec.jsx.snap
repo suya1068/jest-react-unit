@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Component 충돌없이 랜더링한다. 1`] = `
+<button
+  className="u-button"
+>
+  버튼
+</button>
+`;

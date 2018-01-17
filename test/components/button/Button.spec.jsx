@@ -1,3 +1,18 @@
+import React from "react";
+import Button from "src/components/button/Button";
+
+describe("Button Component", () => {
+    it("충돌없이 랜더링한다.", () => {
+        const tree = shallow(<Button>버튼</Button>);
+        expect(tree).toMatchSnapshot();
+    });
+
+    it("primary 테마를 설정한다.", () => {
+        const tree = shallow(<Button theme="primary">버튼</Button>);
+        expect(tree.find('.u-button').hasClass("u-button-primary")).toBe(true);
+    });
+});
+
 /*
     // https://semantic-ui.com/elements/button.html
     1. 유효하지 않은 테마를 설정하면, 타입에러가 발생한다.

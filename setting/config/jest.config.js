@@ -14,5 +14,8 @@ module.exports = {
     "setupFiles": ["<rootDir>/test/jest.setup.js"],
     "moduleNameMapper": {
         "^.+\\.(css|scss)$": "identity-obj-proxy"
-    }
+    },
+    "snapshotSerializers": [
+        "<rootDir>/node_modules/enzyme-to-json/serializer"
+    ]
 };
