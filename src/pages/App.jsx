@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 
 import ProgressPage from "./ProgressPage";
+import ButtonPage from "./ButtonPage";
 
 class App extends Component {
     render() {
@@ -18,6 +19,7 @@ class App extends Component {
                     <ul>
                         <li><Link to="/sample">Sample</Link></li>
                         <li><Link to="/progress">Progress</Link></li>
+                        <li><Link to="/button">Button</Link></li>
                     </ul>
 
                     <hr />
@@ -26,6 +28,7 @@ class App extends Component {
                         <Redirect exact from="/" to="/sample" />
                         <Route exact path="/sample" component={() => <h1>Sample</h1>} />
                         <Route exact path="/progress" component={ProgressPage} />
+                        <Route exact path="/button" component={ButtonPage} />
                     </Switch>
                 </div>
             </Router>

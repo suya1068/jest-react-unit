@@ -2,23 +2,70 @@ import React from "react";
 import Button from "src/components/button/Button";
 
 describe("Button Component", () => {
-    it("충돌없이 랜더링한다.", () => {
-        const tree = shallow(<Button>버튼</Button>);
-        expect(tree).toMatchSnapshot();
+    it("랜더링한다.", () => {
+        const component = shallow(<Button>버튼</Button>);
+        expect(component).toMatchSnapshot();
     });
 
     it("테마를 설정한다.", () => {
-        const tree = shallow(<Button theme="primary">버튼</Button>);
-        expect(tree.find('.u-button').hasClass(Button.theme.primary)).toBe(true);
+        const component = shallow(<Button theme="primary">버튼</Button>);
+        expect(component).toMatchSnapshot();
 
-        tree.setProps({ theme: "secondary" });
-        expect(tree.find('.u-button').hasClass(Button.theme.secondary)).toBe(true);
+        component.setProps({ theme: "secondary" });
+        expect(component).toMatchSnapshot();
 
-        tree.setProps({ theme: "positive" });
-        expect(tree.find('.u-button').hasClass(Button.theme.positive)).toBe(true);
+        component.setProps({ theme: "positive" });
+        expect(component).toMatchSnapshot();
 
-        tree.setProps({ theme: "negative" });
-        expect(tree.find('.u-button').hasClass(Button.theme.negative)).toBe(true);
+        component.setProps({ theme: "negative" });
+        expect(component).toMatchSnapshot();
+    });
+    
+    it("사이즈를 설정한다.", () => {
+        const component = shallow(<Button size="tiny">버튼</Button>);
+        expect(component).toMatchSnapshot();
+
+        component.setProps({ size: "small" });
+        expect(component).toMatchSnapshot();
+
+        component.setProps({ size: "large" });
+        expect(component).toMatchSnapshot();
+
+        component.setProps({ size: "big" });
+        expect(component).toMatchSnapshot();
+    });
+
+    it("width와 height이 설정되었다면, inline-style로 데이터를 설정한다.", () => {
+        let actual;
+
+        actual = Button.createStyles();
+        expect(actual).toEqual(null);
+
+        actual = Button.createStyles({ width: 200, height: "" });
+        expect(actual).toEqual({ width: "200px" });
+
+        let component = shallow(<Button width={200}>버튼</Button>);
+        expect(component).toMatchSnapshot();
+
+        component = shallow(<Button width={200} height={50}>버튼</Button>);
+        expect(component).toMatchSnapshot();
+    });
+
+    it("기본속성을 설정한다.", () => {
+        const component = shallow(
+            <Button
+                className="text-center"
+                autoFocus={true}
+                style={{ width: "100px", backgroundColor: "black" }}
+                onClick={() => {}}
+            >버튼</Button>
+        );
+        expect(component).toMatchSnapshot();
+    });
+
+    it("width와 style속성 width과 중복된다면, width값이 설정된다.", () => {
+        const component = shallow(<Button style={{ width: "100px" }} width={200}>버튼</Button>);
+        expect(component).toMatchSnapshot();
     });
 });
 

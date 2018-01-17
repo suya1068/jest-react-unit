@@ -1,3 +1,87 @@
+$u-button-primary: #2185d0;
+$u-button-primary-hover: #1678c2;
+$u-button-secondary: #1b1c1d;
+$u-button-secondary-hover: #27292a;
+$u-button-positive: #21ba45;
+$u-button-positive-hover: #16ab39;
+$u-button-negative: #db2828;
+$u-button-negative-hover: #d01919;
+
 .u-button {
     position: relative;
+    display: inline-block;
+    min-height: 1em;
+    margin: 0 .25em 0 0;
+    padding: 0.78571429em 1.5em 0.78571429em;
+    background-color: #e0e1e2;
+    border: none;
+    border-radius: .28571429rem;
+    box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgba(34,36,38,.15) inset;
+    outline: 0;
+    line-height: 1em;
+    vertical-align: baseline;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease;
+    will-change: '';
+    -webkit-tap-highlight-color: transparent;
+
+    &:hover,
+    &:focus {
+        background-color: #cacbcd;
+    }
+
+    // theme
+    &-primary {
+        background-color: $u-button-primary;
+        color: #fff;
+        text-shadow: none;
+        background-image: none;
+
+        &:hover,
+        &:focus {
+            background-color: $u-button-primary-hover;
+        }
+    }
+
+    &-secondary {
+        background-color: $u-button-secondary;
+        color: #fff;
+        text-shadow: none;
+        background-image: none;
+
+        &:hover,
+        &:focus {
+            background-color: $u-button-secondary-hover;
+        }
+    }
+
+    &-positive {
+        background-color: $u-button-positive;
+        color: #fff;
+        text-shadow: none;
+        background-image: none;
+
+        &:hover,
+        &:focus {
+            background-color: $u-button-positive-hover;
+        }
+    }
+
+    &-negative {
+        background-color: $u-button-negative;
+        color: #fff;
+        text-shadow: none;
+        background-image: none;
+
+        &:hover,
+        &:focus {
+            background-color: $u-button-negative-hover;
+        }
+    }
 }
