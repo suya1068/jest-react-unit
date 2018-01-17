@@ -7,9 +7,18 @@ describe("Button Component", () => {
         expect(tree).toMatchSnapshot();
     });
 
-    it("primary 테마를 설정한다.", () => {
+    it("테마를 설정한다.", () => {
         const tree = shallow(<Button theme="primary">버튼</Button>);
-        expect(tree.find('.u-button').hasClass("u-button-primary")).toBe(true);
+        expect(tree.find('.u-button').hasClass(Button.theme.primary)).toBe(true);
+
+        tree.setProps({ theme: "secondary" });
+        expect(tree.find('.u-button').hasClass(Button.theme.secondary)).toBe(true);
+
+        tree.setProps({ theme: "positive" });
+        expect(tree.find('.u-button').hasClass(Button.theme.positive)).toBe(true);
+
+        tree.setProps({ theme: "negative" });
+        expect(tree.find('.u-button').hasClass(Button.theme.negative)).toBe(true);
     });
 });
 
