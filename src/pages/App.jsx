@@ -10,6 +10,7 @@ import {
 
 import ProgressPage from "./ProgressPage";
 import InputPage from "./InputPage";
+import ButtonPage from "./ButtonPage";
 
 class App extends Component {
     render() {
@@ -20,6 +21,7 @@ class App extends Component {
                         <li><Link to="/sample">Sample</Link></li>
                         <li><Link to="/progress">Progress</Link></li>
                         <li><Link to="/input">Input</Link></li>
+                        <li><Link to="/button">Button</Link></li>
                     </ul>
 
                     <hr />
@@ -29,6 +31,7 @@ class App extends Component {
                         <Route exact path="/sample" component={() => <h1>Sample</h1>} />
                         <Route exact path="/progress" component={ProgressPage} />
                         <Route exact path="/input" component={InputPage} />
+                        <Route exact path="/button" component={ButtonPage} />
                     </Switch>
                 </div>
             </Router>
