@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`# Input Component input type을 설정할 수 있다. 1`] = `
+<input
+  className="input-container"
+  placeholder=""
+  style={
+    Object {
+      "width": 100,
+    }
+  }
+  type="text"
+/>
+`;
+
+exports[`# Input Component placeholder 값을 설정 할 수 있다. 1`] = `
+<input
+  className="input-container"
+  placeholder="테스트1"
+  style={
+    Object {
+      "width": 100,
+    }
+  }
+  type="text"
+/>
+`;
+
+exports[`# Input Component width를 설정 할 수 있다. 1`] = `
+<input
+  className="input-container"
+  placeholder=""
+  style={
+    Object {
+      "width": 30,
+    }
+  }
+  type="text"
+/>
+`;
+
+exports[`# Input Component 렌더링 가능 1`] = `
+<input
+  className="input-container"
+  placeholder=""
+  style={
+    Object {
+      "width": 100,
+    }
+  }
+  type="text"
+/>
+`;
